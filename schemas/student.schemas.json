@@ -10,9 +10,7 @@
             "minLength": 1
 		},
         "gpa": {
-			"type": "number",
-            "min": 0,
-            "max": 10
+			"type": "number"
 		}
 	}
 }
