@@ -7,7 +7,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const db = require("./utils/db");
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100, // limit each IP to 100 requests per windowMs
