@@ -11,8 +11,8 @@
 		},
         "gpa": {
 			"type": "number",
-            "minium": 0,
-            "maximum": 10
+            "min": 0,
+            "max": 10
 		}
 	}
 }
