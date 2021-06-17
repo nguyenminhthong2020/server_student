@@ -5,9 +5,7 @@
 	"additionalProperties": false,
 	"properties": {
         "gpa": {
-			"type": "number",
-            "minium": 0,
-            "maximum": 10
+			"type": "number"
 		}
 	}
 }
