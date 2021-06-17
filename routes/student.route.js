@@ -25,7 +25,7 @@ GET    /:id
 router.get("/:id", (req, res) => {
     const id = +res.params.id ?? 0;
     try {
-        const student = Student.findOne({ student_id: req.params.id });
+        const student = Student.findOne({ student_id: id });
         return res.status(200).send(student);
     } catch (err) {
         return res.status(500).send(err.message);
