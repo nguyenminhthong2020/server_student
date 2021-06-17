@@ -22,10 +22,10 @@ router.get("/", async (req, res) => {
 GET    /:id
     Xem ds sinh viên có id
 */
-router.get("/:id", (req, res) => {
+router.get("/:id", async (req, res) => {
     try {
         const id = +req.params.id ?? 0;
-        const student = Student.findOne({ student_id: id });
+        const student = await Student.findOne({ student_id: id });
         return res.status(200).send(student);
     } catch (err) {
         return res.status(500).send(err.message);
