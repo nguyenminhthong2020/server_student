@@ -23,8 +23,8 @@ GET    /:id
     Xem ds sinh viên có id
 */
 router.get("/:id", (req, res) => {
-    const id = +res.params.id ?? 0;
     try {
+        const id = +req.params.id ?? 0;
         const student = Student.findOne({ student_id: id });
         return res.status(200).send(student);
     } catch (err) {
