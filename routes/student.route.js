@@ -48,6 +48,8 @@ router.post("/", ajvMdw(require('../schemas/student.schemas.json')), async (req,
         const newStudent = new Student({
             name,
             gpa,
+            created_at: moment().valueOf(),
+            modified_at: moment().valueOf()
         });
         const result = await newStudent.save();
         return res.status(201).send(result);
@@ -73,7 +75,8 @@ router.put("/:id", ajvMdw(require('../schemas/student_gpa.schemas.json')) ,async
                 student_id: id
             },
             {
-                gpa
+                gpa,
+                modified_at: moment().valueOf()
             }
         );
         return res.status(201).send(result);

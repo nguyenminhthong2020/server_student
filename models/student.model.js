@@ -8,7 +8,7 @@ const studentSchema = new Schema({
     name: String,
     gpa: Number,
     created_at: String,
-    modified_at: Date.now
+    modified_at: String
 });
 
 studentSchema.plugin(AutoIncrement, {inc_field: 'student_id'});
