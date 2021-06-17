@@ -45,13 +45,18 @@ POST
 router.post("/", ajvMdw(require('../schemas/student.schemas.json')), async (req, res) => {
     try {
         const { name, gpa } = req.body;
+        console.log(name + "\n");
         const newStudent = new Student({
             name,
             gpa,
             created_at: moment().valueOf(),
             modified_at: moment().valueOf()
         });
+        
+        console.log(newStudent + "\n");
+        
         const result = await newStudent.save();
+        console.log("đã save");
         return res.status(201).send(result);
 
     } catch (err) {
